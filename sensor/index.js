@@ -26,7 +26,7 @@ climate.on('ready', function () {
 					}
 				}
 			);
-			setTimeout(loop, 5000);
+			setTimeout(loop, 60000);
 			});
 		});
 	});
