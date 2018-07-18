@@ -1,0 +1,19 @@
+{
+  "name": "climate-server",
+  "version": "0.0.1",
+  "description": "Backend api and server for indoor climate app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --experimental-modules server.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.4",
+    "morgan": "^1.9.0"
+  }
+}
