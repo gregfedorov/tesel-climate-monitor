@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.recharts-wrapper,
+.recharts-wrapper svg {
+  width: 100% !important;
+  height: 100% !important;
+}
