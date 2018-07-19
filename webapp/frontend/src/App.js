@@ -26,8 +26,8 @@ class App extends Component {
     return (
       <div className="App">
         <LineChart width={800} height={400} data={this.state.data}>
-          <Line type="monotone" dataKey="temperature" stroke="red" />
-          <Line type="monotone" dataKey="humidity" stroke="blue" />
+          <Line type="monotone" dot={false} dataKey="temperature" stroke="red" />
+          <Line type="monotone" dot={false} dataKey="humidity" stroke="blue" />
         </LineChart>
         {
           [5, 20, 100, 500].map(value => <button onClick={()=>this.handleLimitChange(value)}>{value}</button>)
