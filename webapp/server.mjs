@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
+import path from 'path';
 
 const app = express();
 
@@ -21,9 +22,13 @@ db.once('open', function() {
   console.log("DB connection alive");
 });
 
-import api_routes from './app/routes/routes'
+import api_routes from './server/routes/routes'
 
+app.use(express.static('./frontend/build'));
 app.use('/api', api_routes);
 
-app.listen(port);
-console.log('Application live at port ' + port);
+app.listen(port, err => {
+  if (err) throw err;
+  console.log('Application live at port ' + port);
+});
+

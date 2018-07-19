@@ -10,7 +10,6 @@ router.use((req, res, next) => {
 	next();
 });
 
-router.get('/', (req, res) => res.json({ message: 'hooray! welcome to our api!' }) );
 router.use('/readings', readings);
 router.use('/readings', readings_by_id);
 	
