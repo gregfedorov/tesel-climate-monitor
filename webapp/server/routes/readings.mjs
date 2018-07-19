@@ -24,7 +24,9 @@ readings.post('/', (req, res) => {
 })
 
 readings.get('/', (req, res) => {
-	Climate.find(function(err, readings) {
+	const items = req.query.items;
+	console.log(items);
+	Climate.find({}).limit(parseInt(items)).exec(function(err, readings) {
 		if (err)
 			res.send(err);
 

@@ -2,6 +2,23 @@
   text-align: center;
 }
 
+.App button {
+  display: inline-block;
+  appearance: none;
+  background-color: grey;
+  color: white;
+  padding: 1rem 2rem;
+  margin: 0 0.5rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.App button:hover {
+  background-color: darkgray;
+}
+
 .recharts-wrapper,
 .recharts-wrapper svg {
   width: 100% !important;

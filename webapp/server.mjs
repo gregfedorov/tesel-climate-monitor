@@ -10,7 +10,7 @@ app.use(morgan('dev')); // log requests to the console
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const port     = process.env.PORT || 8080; // set our port
+const port = process.env.PORT || 8080; // set our port
 
 import mongoose from 'mongoose';
 mongoose.connect('mongodb://localhost:27017/temperature', { useNewUrlParser: true }); // connect to our database
@@ -24,8 +24,8 @@ db.once('open', function() {
 
 import api_routes from './server/routes/routes'
 
-app.use(express.static('./frontend/build'));
 app.use('/api', api_routes);
+app.use(express.static('./frontend/build'));
 
 app.listen(port, err => {
   if (err) throw err;

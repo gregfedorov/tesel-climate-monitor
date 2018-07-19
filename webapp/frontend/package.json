@@ -1,5 +1,5 @@
 {
-  "name": "climate api",
+  "name": "climate_api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
