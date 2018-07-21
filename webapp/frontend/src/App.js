@@ -7,7 +7,7 @@ import { LineChart, Line } from 'recharts';
 class App extends Component {
   state = {
     data: [],
-    limit: 20
+    limit: 500
   }
   handleLimitChange = (limit) => {
     this.fetchData(limit);
@@ -15,7 +15,7 @@ class App extends Component {
   fetchData = (limit) => {
     axios.get('/api/readings?items='+limit)
     .then(res => {
-      const data = res.data;
+      const data = res.data.reverse();
       this.setState({ data, limit });
     })
   }
@@ -25,12 +25,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <LineChart width={800} height={400} data={this.state.data}>
+        <LineChart width={800} height={300} data={this.state.data}>
           <Line type="monotone" dot={false} dataKey="temperature" stroke="red" />
           <Line type="monotone" dot={false} dataKey="humidity" stroke="blue" />
         </LineChart>
         {
-          [5, 20, 100, 500].map(value => <button onClick={()=>this.handleLimitChange(value)}>{value}</button>)
+          [5, 20, 100, 500].map(value => <button className={value === this.state.limit ? 'active' : ''} onClick={()=>this.handleLimitChange(value)}>{value}</button>)
         }
       </div>
     );

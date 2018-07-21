@@ -8,15 +8,22 @@
   background-color: grey;
   color: white;
   padding: 1rem 2rem;
-  margin: 0 0.5rem 2rem;
+  margin: 0 0.25rem 2rem;
   border: none;
   border-radius: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 1;
   cursor: pointer;
+  box-shadow: 0 0.3rem 10px rgba(0,0,0,0.2);
 }
 
-.App button:hover {
-  background-color: darkgray;
+.App button:active {
+  transform: translateY(0.1rem);
+  box-shadow: 0 0.1rem 3px rgba(0,0,0,0.6);
+}
+
+.App button.active {
+  background-color: lightslategray;
 }
 
 .recharts-wrapper,
